@@ -105,3 +105,4 @@ INSERT INTO wish (
           'kitchen.jpg',
           2
       );
+
