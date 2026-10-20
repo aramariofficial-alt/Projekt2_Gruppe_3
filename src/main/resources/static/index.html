@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startside – Ønskeskyen</title>
+    <!-- Relativ sti virker både i IntelliJ-preview og fra Spring Boot. -->
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="startside">
+<header>
+    <div class="header-inner">
+        <p class="brand">Ønskeskyen</p>
+        <h1>Startside</h1>
+        <p>Saml dine ønsker. Del glæden.</p>
+        <!-- Tilslut disse knapper, når redigering og sletning er implementeret. -->
+        <nav class="header-actions" aria-label="Administrer ønskelister">
+            <button class="btn-delete" type="button" disabled title="Sletning er ikke tilsluttet endnu" aria-label="Slet ønskeliste (kommer senere)">✕</button>
+            <button type="button" disabled title="Redigering er ikke tilsluttet endnu" aria-label="Rediger ønskeliste (kommer senere)">✎</button>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="wishlist-section" aria-labelledby="wishlist-title">
+        <div class="section-heading">
+            <div><p class="eyebrow">Dine samlinger</p><h2 id="wishlist-title">Dine ønskelister</h2></div>
+            <p>Et sted til alt det, du ønsker dig.</p>
+        </div>
+        <!-- Eksempelkort: forbind links til dine kommende controller-ruter. -->
+        <div class="grid-3">
+            <article class="wishlist-item">
+                <a href="/wishlist/create" class="add-link btn-add" aria-label="Opret ny ønskeliste"><span aria-hidden="true">+</span></a>
+                <h3>Opret ny ønskeliste</h3>
+                <p>Gør plads til nye ønsker</p>
+            </article>
+            <article class="wishlist-item">
+                <a href="/wishlist/1" class="wishlist-card birthday-card" aria-label="Åbn Min fødselsdag">
+                    <span class="card-label">Ønskeliste 1</span>
+                    <span class="gift-icon" aria-hidden="true">♧</span>
+                    <span class="card-caption">Noget at glæde sig til</span>
+                </a>
+                <h3>Min fødselsdag</h3>
+                <p>Alle mine fødselsdagsønsker</p>
+            </article>
+            <article class="wishlist-item">
+                <a href="/wishlist/2" class="wishlist-card christmas-card" aria-label="Åbn Jul 2026">
+                    <span class="card-label">Ønskeliste 2</span>
+                    <span class="gift-icon" aria-hidden="true">✧</span>
+                    <span class="card-caption">Små og store juleønsker</span>
+                </a>
+                <h3>Jul 2026</h3>
+                <p>Ønsker til den hyggelige tid</p>
+            </article>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="grid-2 footer-content">
+        <div><p class="eyebrow">Ønskeskyen</p><h2>Om os</h2><p>Her kan du samle dine ønsker og dele dem med dem, du holder af. Fra små overraskelser til store drømme.</p></div>
+        <div class="map-placeholder" role="img" aria-label="Pladsholder til et kommende kort"><span class="map-pin" aria-hidden="true">⌖</span><span>Her kommer et kort</span></div>
+    </div>
+    <p class="footer-bottom">Ønskeskyen · Plads til dine ønsker</p>
+</footer>
+</body>
+</html>
