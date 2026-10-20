@@ -6,14 +6,16 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: #f5f5f5;
+    background: #eaeaea;
     color: #222;
 }
 
 h1, h2, h3 {
     margin-top: 0;
 }
-
+.rødskrift {
+    color: #C2285B;
+}
 /* HEADER */
 header {
     text-align: center;
@@ -21,6 +23,11 @@ header {
     background: linear-gradient(135deg, #F4524D, #F06B3F, #C2285B);
     border-bottom: 2px solid #ddd;
     color: white;
+}
+/* kanpper i header */
+
+header nav {
+    text-align: right;
 }
 
 header hr {
@@ -144,6 +151,7 @@ select {
 /* BILLEDER */
 img {
     max-width: 100%;
+    max-height: 100%;
     border-radius: 6px;
 }
 
