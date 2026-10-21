@@ -238,3 +238,26 @@ footer input[type="email"] {
     margin-top: 10px;
 }
 
+header {
+    position: relative;
+}
+
+.logo-link {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/*Transform gør logoet større (1:1 betyder den bliver 10% større)*/
+/*hover er når musen holdes over logoet -- > kombinerer man de to vil det sige at logoet bliver 10% større når man holder musen over det*/
+.logo:hover {
+    transform: scale(1.1);
+}
+
