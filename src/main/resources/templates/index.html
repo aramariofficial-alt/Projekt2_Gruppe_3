@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startside – CallDibs</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{../static/styles.css}">
+</head>
+<body>
+<header>
+    <h1>CallDibs</h1>
+    <p>Saml dine ønsker. Del glæden.</p>
+    <hr>
+    <nav aria-label="Administrer ønskelister">
+        <button class="btn-delete" type="button" disabled title="Sletning er ikke tilsluttet endnu" aria-label="Slet ønskeliste (kommer senere)">✕</button>
+        <button type="button" disabled title="Redigering er ikke tilsluttet endnu" aria-label="Rediger ønskeliste (kommer senere)">✎</button>
+    </nav>
+</header>
+<main>
+    <section aria-labelledby="wishlist-title">
+        <b class = "rødskrift">Dine samlinger</b>
+        <h2 id="wishlist-title">Dine ønskelister</h2>
+        <p>Et sted til alt det, du ønsker dig.</p>
+        <div class="grid-3">
+            <article class="wish-card">
+                <form action="/wishlist/create" method="get">
+                    <button class="btn-add" type="submit" aria-label="Opret ny ønskeliste">+</button>
+                </form>
+                <h3>Opret ny ønskeliste</h3>
+                <p>Gør plads til nye ønsker</p>
+            </article>
+            <article class="wish-card">
+                <a href="/wishlist/1" aria-label="Åbn Min fødselsdag">
+                    <img src="../static/img/wishlist.png" alt="Ønskeliste til min fødselsdag">
+                </a>
+                <h3>Min fødselsdag</h3>
+                <p>Alle mine fødselsdagsønsker</p>
+                <a href="/wishlist/1">Åbn ønskeliste 1</a>
+            </article>
+            <article class="wish-card">
+                <a href="/wishlist/2" aria-label="Åbn Jul 2026">
+                    <img src="../static/img/wishlist.png" alt="Ønskeliste til jul">
+                </a>
+                <h3>Jul 2026</h3>
+                <p>Ønsker til den hyggelige tid</p>
+                <a href="/wishlist/2">Åbn ønskeliste 2</a>
+            </article>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="grid-2">
+        <div>
+            <h2>Om os</h2>
+            <p>Her kan du samle dine ønsker og dele dem med dem, du holder af. Fra små overraskelser til store drømme.</p>
+        </div>
+        <div>
+            <p aria-hidden="true">⌖</p>
+            <p>Her kommer et kort</p>
+        </div>
+    </div>
+    <p>CallDibs · Plads til dine ønsker</p>
+</footer>
+</body>
+</html>
