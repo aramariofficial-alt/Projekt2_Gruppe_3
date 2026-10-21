@@ -12,8 +12,12 @@
   <div class="container">
 
     <nav class="row" >
+      <a href="index.html" th:href="@{/}" class="logo">
+        <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
+      </a>
       <a class="logo">CallDibs </a>
       <span>Mine ønskelister</span>
+
     </nav>
 
     <div class="section">
@@ -23,10 +27,15 @@
         Gør plads til det,<br>
         du glæder dig til.
       </h1>
+
       <p>
         Saml dine ønsker ét sted, og gør det nemt<br>
         for dine nærmeste at finde den rette gave.
       </p>
+
+      <a class="btn btn-light" href="#ny-liste">
+        + Opret ønskeliste
+      </a>
     </div>
 
   </div>
