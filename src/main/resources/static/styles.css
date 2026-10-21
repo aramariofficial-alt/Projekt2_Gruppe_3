@@ -90,10 +90,11 @@ header a {
     font-size: 26px;
     font-weight: bold;
 }
-footer {
-    padding: 28px 0;
-    border-top: 1px solid var(--border);
-}
+.logo-link {
+    position: absolute;footer {
+    top: 15px;    padding: 28px 0;
+    left: 15px;    border-top: 1px solid var(--border);
+}}
 
 /* 5. GENBRUGELIGE TEKSTTYPER */
 .text-muted {
