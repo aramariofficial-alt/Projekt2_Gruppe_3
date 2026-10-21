@@ -1,0 +1,31 @@
+<!-- create.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Wishlist</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{../static/styles.css}">
+</head>
+<body>
+<header>
+    <h1>CallDibs</h1>
+    <p>Saml dine ønsker. Del glæden.</p>
+    <hr>
+    <nav aria-label="Administrer ønskelister">
+    </nav>
+</header>
+<div class="create-box">
+    <div class="create-box-form">
+        <h2 class="rødskrift">Create a New wishlist</h2>
+        <form th:action="@{/static}" method="post">
+            <div>
+            <label class="rødskrift" for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter name of wishlist" required>
+            </div>
+            <button type="submit">Create Wishlist</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

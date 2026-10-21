@@ -237,6 +237,56 @@ footer input[type="email"] {
     border: 1px solid #f4a0b0;
     margin-top: 10px;
 }
+.create-box {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.create-box-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+.create-box-form form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.create-box-form input {
+    align-self: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background: #f9f9f9;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+.create-box-form select {
+    align-self: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background: #f9f9f9;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+}
 /* STARTSIDE – bygger videre på de fælles klasser ovenfor. */
 .startside { min-height: 100vh; display: flex; flex-direction: column; }
 .startside header { padding: 36px 24px 28px; border: 0; }
