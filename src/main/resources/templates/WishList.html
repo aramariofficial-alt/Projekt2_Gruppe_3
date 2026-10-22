@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CallDibs</title>
+
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{../static/styles.css}">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+
+        <nav class="row" >
+            <a href="index.html" th:href="@{/}" class="logo">
+                <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
+            </a>
+            <a class="logo">CallDibs </a>
+            <span>Mine ønskelister</span>
+
+        </nav>
+
+        <div class="section">
+            <p class="label">Små ønsker. Store smil.</p>
+
+            <h1>
+                Alle dine ønsker samlet her<br>
+
+            </h1>
+
+
+        </div>
+
+    </div>
+</header>
+
+<!-- HOVEDINDHOLD -->
+<main class="container section stack">
+
+    <div class="row">
+        <div>
+            <p class="label">Dit eget lille ønskeunivers</p>
+            <h2>Mine ønsker</h2>
+        </div>
+
+        <p class="text-muted text-small">
+            Gode idéer fortjener en plads.
+        </p>
+    </div>
+
+    <div class="grid-3">
+        <!-- OPRET ØNSKELISTE -->
+        <a
+                class="card card-action bg-green"
+                href="createWish.html"
+                id="ny-liste"
+        >
+            <span class="icon-circle"> + </span>
+
+            <h3>Hvad ønsker du dig?</h3>
+
+            <p class="text-muted text-small">
+                En ny anledning.<br>
+                En helt ny ønskeliste.
+            </p>
+
+            <span class="text-small">Opret ønskeliste ↗</span>
+        </a>
+        </div>
+
+    <!-- VIS OPRETTEDE ØNSKER -->
+    <article class="card" th:each="wish : ${wishes}">
+
+        <div class="card-body">
+            <h3 th:text="${wish.name}">Ønskets navn</h3>
+
+            <p
+                    class="text-muted"
+                    th:text="${wish.description}"
+            >
+                Beskrivelse af ønsket
+            </p>
+
+            <p>
+                <strong>Pris:</strong>
+                <span th:text="${wish.price}">0</span> kr.
+            </p>
+
+            <a
+                    class="btn"
+                    th:href="${wish.link}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >
+                Se produkt ↗
+            </a>
+        </div>
+
+    </article>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container row">
+
+        <div>
+            <a class="logo" href="index.html">CallDibs</a>
+            <p class="text-muted text-small">Plads til dine ønsker.</p>
+        </div>
+
+        <p class="text-muted text-small">Saml. Ønsk. Del glæden.</p>
+
+        <span class="text-muted text-small">© 2026 CallDibs</span>
+
+    </div>
+</footer>
+
+</body>
+
+</html>
