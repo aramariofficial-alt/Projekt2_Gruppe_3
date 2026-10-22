@@ -7,8 +7,7 @@
 
     <title>CallDibs</title>
 
-    <link rel="stylesheet" href="../static/styles.css" th:href="@{../static/styles.css}">
-</head>
+    <link rel="stylesheet" href="/styles.css" th:href="@{/styles.css}"></head>
 
 <body>
 
@@ -17,9 +16,9 @@
     <div class="container">
 
         <nav class="row" >
-                <a href="index.html" th:href="@{/}" class="logo">
-                    <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
-                </a>
+            <a href="index.html" th:href="@{/}" class="logo">
+                <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
+            </a>
             <a class="logo">CallDibs </a>
             <span>Mine ønskelister</span>
 
@@ -64,7 +63,7 @@
         <!-- OPRET ØNSKELISTE -->
         <a
                 class="card card-action bg-green"
-                href="createWishList.html"
+                th:href="createWishList.html"
                 id="ny-liste"
         >
             <span class="icon-circle"> + </span>
@@ -82,66 +81,16 @@
 
 
         <!-- FØDSELSDAG -->
-        <article class="card">
-            <a href="#foedselsdag">
-                <img
-                        class="card-image bg-peach"
-                        src="/static/img/wishlist.png"
-                        alt="Gaver og indkøbsposer"
-                >
+        <article class="card" th:each="wishlist : ${wishlists}">
+            <a th:href="@{'/wishlist/' + ${wishlist.id}}">
+                <img class="card-image bg-peach" src="/static/img/wishlist.png"  alt="Ønskerliste">
             </a>
 
-            <div class="card-body">
-                <h3>Min fødselsdag</h3>
-
-                <p class="text-muted text-small">
-                    Alle de ting, jeg går og drømmer om.
-                </p>
-
+            <div class="card-body" >
+                <h3 th:text="${wishlist.name}"></h3>
                 <div class="card-footer row">
-                    <a class="text-small" href="#foedselsdag">
-                        Se ønskeliste ↗
-                    </a>
-
-                    <button
-                            class="btn btn-icon"
-                            type="button"
-                    >
-                        ···
-                    </button>
-                </div>
-            </div>
-        </article>
-
-        <!-- JUL -->
-        <article class="card">
-            <a href="#jul">
-                <img
-                        class="card-image bg-purple"
-                        src="/static/img/wishlist.png"
-                        alt="Gaver til jul"
-                >
-            </a>
-
-            <div class="card-body">
-                <h3>Lidt julemagi</h3>
-
-                <p class="text-muted text-small">
-                    Små og store ønsker til den hyggelige tid.
-                </p>
-
-                <div class="card-footer row">
-                    <a class="text-small" href="#jul">
-                        Se ønskeliste ↗
-                    </a>
-
-                    <button
-                            class="btn btn-icon"
-                            type="button"
-
-                    >
-                        ···
-                    </button>
+                    <a class="text-small" th:href="@{'/wishlist/' + ${wishlist.id}}">Se ønskeliste ↗</a>
+                    <button class="btn btn-icon" type="button">···</button>
                 </div>
             </div>
         </article>
@@ -167,3 +116,4 @@
 </body>
 
 </html>
+
