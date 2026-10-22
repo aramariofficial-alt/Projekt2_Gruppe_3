@@ -18,13 +18,12 @@ public class WishlistRepository {
     @Autowired
     private DataSource dataSource;
 
-    public void deleteWishlist(Wishlist wishlist) {
+    public void deleteWishlist(int id) {
         String sql = "DELETE FROM wishList WHERE id = ?";
-
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
-            statement.setInt(1, wishlist.getId());
+            statement.setInt(1, id);
 
             statement.executeUpdate();
 
