@@ -16,9 +16,10 @@ public class WishlistController {
 
 
     @GetMapping ("/")
-        public String mainPage(Model model){
-            List<Wishlist> wishlists = wishlistRepository.getAllWishlists();
-            model.addAttribute("wishlists", wishlists);
+    public String mainPage(Model model){
+        List<Wishlist> wishlists = wishlistRepository.getAllWishlists();
+        System.out.println("Antal ønskelister fundet: " + wishlists.size()); // Tjek konsollen!
+        model.addAttribute("wishlists", wishlists);
         return "index";
     }
 }

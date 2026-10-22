@@ -35,7 +35,7 @@ public class WishlistRepository {
     }
 
     public void createWishlist(Wishlist wishlist) {
-        String sql = "INSERT INTO wishList (name,img) VALUES (?,?)";
+        String sql = "INSERT INTO wishList (name,img) VALUES (?,?)"; //opretter et nyt row i wishList
 
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
