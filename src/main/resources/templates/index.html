@@ -16,9 +16,9 @@
     <div class="container">
 
         <nav class="row" >
-                <a href="index.html" th:href="@{/}" class="logo">
-                    <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
-                </a>
+            <a href="index.html" th:href="@{/}" class="logo">
+                <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
+            </a>
             <a class="logo">CallDibs </a>
             <span>Mine ønskelister</span>
 
@@ -63,12 +63,12 @@
         <!-- OPRET ØNSKELISTE -->
         <a
                 class="card card-action bg-green"
-                href="createWishList.html"
+                th:href="createWishList.html"
                 id="ny-liste"
         >
             <span class="icon-circle"> + </span>
 
-            <h3>Opret ønskeliste</h3>
+            <h3>Hvad ønsker du dig?</h3>
 
             <p class="text-muted text-small">
                 En ny anledning.<br>
@@ -116,3 +116,4 @@
 </body>
 
 </html>
+
