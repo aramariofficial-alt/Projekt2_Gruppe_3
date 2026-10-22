@@ -7,18 +7,29 @@ public class Wish {
     double price;
     String link;
     String category;
-    String image;
-    int wishList_id;
+    String img;
+    int wishListId;
 
 
-    public Wish(String name, String description, double price, String link, String category, String image, int wishList_id) {
+
+    public Wish(String name, String description, double price, String link, String category, String img, int wishListId) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.link = link;
         this.category = category;
-        this.image = image;
-        this.wishList_id = wishList_id;
+        this.img = img;
+        this.wishListId = wishListId;
+    }
+
+    public Wish(){}
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -61,20 +72,20 @@ public class Wish {
         this.category = category;
     }
 
-    public String getImage() {
-        return image;
+    public String getImg() {
+        return img;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImg(String img) {
+        this.img = img;
     }
 
-    public int getWishList_id() {
-        return wishList_id;
+    public int getWishListId() {
+        return wishListId;
     }
 
-    public void setWishList_id(int wishList_id) {
-        this.wishList_id = wishList_id;
+    public void setWishListId(int wishListId) {
+        this.wishListId = wishListId;
     }
 }
 
