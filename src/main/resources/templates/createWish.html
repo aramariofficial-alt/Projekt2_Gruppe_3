@@ -43,7 +43,8 @@
 <div class="create-box">
   <div class="create-box-form">
     <h2 >Create a new wish</h2>
-    <form th:action="@{/}" method="post">
+    <form th:action="@{/saveCreateWish}" method="post">
+      <input type="hidden" name="wishlistId" th:value="${wishlistId}">
       <div>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter name of wish" required>
@@ -74,7 +75,9 @@
           <option value="Other">Other</option>
         </select>
       </div>
+
       <button class="btn-light, btn" type="submit">Create Wish</button>
+
     </form>
   </div>
 </div>
