@@ -31,12 +31,12 @@ public class WishlistController {
     }
 
     @GetMapping ("/getCreateWishlist")
-    public String createWishList(){
-        return "createWishList";
+    public String createWishlist(){
+        return "createWishlist";
     }
 
-    @PostMapping ("/saveCreateWishList")
-    public String postCreateWishList (@RequestParam("name")String name){
+    @PostMapping ("/saveCreateWishlist")
+    public String postCreateWishlist (@RequestParam("name")String name){
         String img = "/static/img/wishlist.png";
 
         Wishlist wishlist = new Wishlist(name,img);
@@ -51,19 +51,19 @@ public class WishlistController {
     }
 
 
-    @GetMapping("/getUpdateWishList")
-    public String updateWishList(@RequestParam("id") int id, Model model){
+    @GetMapping("/getUpdateWishlist")
+    public String updateWishlist(@RequestParam("id") int id, Model model){
         Wishlist wishlist = wishlistRepository.getWishlistById(id);
         model.addAttribute(wishlist);
-        return "updateWishList";
+        return "updateWishlist";
     }
 
-    @PostMapping("/saveUpdateWishList")
+    @PostMapping("/saveUpdateWishlist")
     public String postUpdateWishlist(@RequestParam("id") int id, @RequestParam("name") String name){
         String img = "/static/img/wishlist.png";
         Wishlist wishlist = new Wishlist(name, img);
         wishlist.setId(id);
-        //wishlistRepository.updateWishlist(wishlist);   Mangler updatewishlist 
+        //wishlistRepository.updateWishlist(wishlist);   Mangler updateWishlist 
         return "redirect:/";
     }
 
@@ -73,7 +73,7 @@ public class WishlistController {
          Wishlist wishlist = wishlistRepository.getWishlistById(id);
          model.addAttribute("wishlist", wishlist);
 
-        return "WishList"; // Den side der viser selve indholdet
+        return "wishlist"; // Den side der viser selve indholdet
     }
 
 }

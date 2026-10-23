@@ -16,13 +16,13 @@ public class WishRepository {
     private DataSource dataSource;
 
     public void createWish(Wish wish) {
-        String sql = "INSERT INTO wish (name, description, price, link, category, img, wishList_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO wish (name, description, price, link, category, img, wishlist_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
             setWishParameters(wish, statement);
-            statement.setInt(7, wish.getWishListId());
+            statement.setInt(7, wish.getWishlistId());
 
             statement.executeUpdate();
 

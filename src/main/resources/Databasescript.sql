@@ -12,7 +12,7 @@ USE projekt2_gruppe_3_db;
 
 
 -- Tabel til ønskelister
-CREATE TABLE wishList (
+CREATE TABLE wishlist (
                           id INT AUTO_INCREMENT PRIMARY KEY,
                           name VARCHAR(100) NOT NULL,
                           img VARCHAR(255)
@@ -28,15 +28,15 @@ CREATE TABLE wish (
                       link VARCHAR(100) NOT NULL,
                       category VARCHAR(50) NOT NULL,
                       img VARCHAR(255),
-                      wishList_id INT NOT NULL,
+                      wishlist_id INT NOT NULL,
 
-                      FOREIGN KEY (wishList_id)
-                          REFERENCES wishList(id)
+                      FOREIGN KEY (wishlist_id)
+                          REFERENCES wishlist(id)
 );
 
 
 -- Eksempeldata til ønskelister
-INSERT INTO wishList (name) VALUES
+INSERT INTO wishlist (name) VALUES
                                 ('JuleØnsker'),
                                 ('FødselsdagsØnsker');
 
@@ -49,7 +49,7 @@ INSERT INTO wish (
     link,
     category,
     img,
-    wishList_id
+    wishlist_id
 ) VALUES
       (
           'PlayStation 5',

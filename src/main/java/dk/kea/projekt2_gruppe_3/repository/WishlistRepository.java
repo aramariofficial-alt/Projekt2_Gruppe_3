@@ -20,7 +20,7 @@ public class WishlistRepository {
     private DataSource dataSource;
 
     public void deleteWishlist(int id) {
-        String sql = "DELETE FROM wishList WHERE id = ?";
+        String sql = "DELETE FROM wishlist WHERE id = ?";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
@@ -35,7 +35,7 @@ public class WishlistRepository {
     }
 
     public void createWishlist(Wishlist wishlist) {
-        String sql = "INSERT INTO wishList (name,img) VALUES (?,?)"; //opretter et nyt row i wishList
+        String sql = "INSERT INTO wishlist (name,img) VALUES (?,?)"; //opretter et nyt row i wishlist
 
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -53,7 +53,7 @@ public class WishlistRepository {
 
     public List<Wishlist> getAllWishlists() {
         List<Wishlist> wishlists = new ArrayList<>();
-        String sql = "SELECT * FROM wishList";
+        String sql = "SELECT * FROM wishlist";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet resultSet = statement.executeQuery();
@@ -76,8 +76,8 @@ public class WishlistRepository {
     }
 
     public Wishlist getWishlistById(int id) {
-        String sqlWishlist = "SELECT * FROM wishList WHERE id = ?";
-        String sqlWishes = "SELECT * FROM wish WHERE wishList_id = ?";
+        String sqlWishlist = "SELECT * FROM wishlist WHERE id = ?";
+        String sqlWishes = "SELECT * FROM wish WHERE wishlist_id = ?";
         Wishlist wishlist = null;
 
         try (Connection connection = dataSource.getConnection()) {
@@ -109,7 +109,7 @@ public class WishlistRepository {
                             wish.setLink(resultSet.getString("link"));
                             wish.setCategory(resultSet.getString("category"));
                             wish.setImg(resultSet.getString("img"));
-                            wish.setWishListId(resultSet.getInt("wishList_id"));
+                            wish.setWishlistId(resultSet.getInt("wishlist_id"));
 
                             wishlist.addWish(wish); // Tilføjer ønsket til listen
                         }
