@@ -75,12 +75,12 @@
         <!-- DYNAMISK VISNING AF ØNSKER -->
         <article class="card" th:each="wish : ${wishlist.wishes}">
             <div class="card-body">
+                <a class="text-small" th:href="${wish.link}" target="_blank" th:if="${wish.link}">
                 <h3 th:text="${wish.name}">Ønske navn</h3>
                 <p class="text-muted text-small" th:text="${wish.description}">Beskrivelse</p>
                 <p class="text-small" th:text="${wish.price} + ' kr.'">0 kr.</p>
-
+                </a>
                 <div class="card-footer row">
-                    <a class="text-small" th:href="${wish.link}" target="_blank" th:if="${wish.link}">Se produkt ↗</a>
                     <button class="btn btn-icon" type="button">···</button>
                 </div>
             </div>

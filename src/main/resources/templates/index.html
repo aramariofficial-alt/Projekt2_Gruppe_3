@@ -82,18 +82,18 @@
 
         <!-- OPRETTEDE ØNSKER -->
         <article class="card" th:each="wishlist : ${wishlists}">
-
+            <a class="text-small" th:href="@{'/wishlist/' + ${wishlist.id}}">
             <img class="card-image bg-peach" src="/img/wishlist.png" th:src="@{/img/wishlist.png}" alt="Ønskeliste">
 
 
             <div class="card-body" >
                 <h3 th:text="${wishlist.name}"></h3>
                 <div class="card-footer row">
-                    <a class="text-small" th:href="@{'/wishlist/' + ${wishlist.id}}">Se ønskeliste ↗</a>
 
                     <button class="btn btn-icon" type="button">···</button>
                 </div>
             </div>
+            </a>
         </article>
     </div>
 </main>
