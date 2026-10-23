@@ -63,7 +63,7 @@
         <!-- OPRET ØNSKELISTE -->
         <a
                 class="card card-action bg-green"
-                th:href="createWishList.html"
+                th:href="@{/getCreateWishlist}"
                 id="ny-liste"
         >
             <span class="icon-circle"> + </span>
@@ -80,7 +80,7 @@
 
 
 
-        <!-- FØDSELSDAG -->
+        <!-- OPRETTEDE ØNSKER -->
         <article class="card" th:each="wishlist : ${wishlists}">
             <a th:href="@{'/wishlist/' + ${wishlist.id}}">
                 <img class="card-image bg-peach" src="/static/img/wishlist.png"  alt="Ønskerliste">

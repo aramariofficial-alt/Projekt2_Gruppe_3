@@ -1,16 +1,16 @@
 package dk.kea.projekt2_gruppe_3.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Wishlist {
     int id;
     String name;
     String img;
-    ArrayList<Wish> wishes;
+    List<Wish> wishes;
 
-    public Wishlist(ArrayList<Wish> wishes, String img, String name, int id) {
-        wishes = new ArrayList<>();
-        this.wishes = wishes;
+    public Wishlist(String name, String img) {
+        this.wishes = new ArrayList<>();
         this.img = img;
         this.name = name;
         this.id = id;
@@ -18,6 +18,10 @@ public class Wishlist {
 
     public Wishlist(){}
 
+
+    public void addWish(Wish wish){
+        wishes.add(wish);
+    }
     public int getId() {
         return id;
     }
@@ -42,11 +46,8 @@ public class Wishlist {
         this.img = img;
     }
 
-    public ArrayList<Wish> getWishes() {
+    public List<Wish> getWishes() {
         return wishes;
     }
 
-    public void setWishes(ArrayList<Wish> wishes) {
-        this.wishes = wishes;
-    }
 }
