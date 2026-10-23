@@ -9,7 +9,7 @@ public class Wishlist {
     String img;
     List<Wish> wishes;
 
-    public Wishlist(String img, String name) {
+    public Wishlist(String name, String img) {
         this.wishes = new ArrayList<>();
         this.img = img;
         this.name = name;
