@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CallDibs</title>
+    <title>CallDibs - Ønsker</title>
 
-    <link rel="stylesheet" href="../static/styles.css" th:href="@{../static/styles.css}">
+    <link rel="stylesheet" href="/styles.css" th:href="@{/styles.css}">
 </head>
 
 <body>
@@ -16,24 +16,21 @@
 <header>
     <div class="container">
 
-        <nav class="row" >
-            <a href="index.html" th:href="@{/}" class="logo">
-                <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
+        <nav class="row">
+            <a href="/" class="logo">
+                <img src="/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
             </a>
-            <a class="logo">CallDibs </a>
+            <a class="logo" href="/">CallDibs</a>
             <span>Mine ønskelister</span>
-
         </nav>
 
         <div class="section">
             <p class="label">Små ønsker. Store smil.</p>
 
-            <h1>
-                Alle dine ønsker samlet her<br>
-
+            <!-- Viser navnet på den aktuelle ønskeliste -->
+            <h1 th:text="${wishlist.name}">
+                Ønskeliste
             </h1>
-
-
         </div>
 
     </div>
@@ -55,69 +52,50 @@
 
     <div class="grid-3">
 
-        <!-- OPRET ØNSKE -->
-        <a class="card card-action bg-green"
-           href="createWish.html">
-
+        <!-- OPRET ØNSKE KNAP -->
+        <a class="card card-action bg-green" th:href="@{/getCreateWish}">
             <span class="icon-circle">+</span>
-
             <h3>Opret ønske</h3>
-
             <p class="text-muted text-small">
-                Opret en ny ønske.
+                Opret et nyt ønske.
             </p>
-
             <span class="text-small">Opret ønske ↗</span>
-
         </a>
 
-        <!-- OPDATER ØNSKELISTE -->
-        <a class="card card-action bg-blue"
-           href="updateWish.html">
-
+        <!-- OPDATER ØNSKE KNAP -->
+        <a class="card card-action bg-blue" th:href="@{'/getUpdateWishList?id=' + ${wishlist.id}}">
             <span class="icon-circle">/</span>
-
-            <h3>Opdater ønske</h3>
-
+            <h3>Opdater ønskeliste</h3>
             <p class="text-muted text-small">
-                Rediger eksisterende ønsker.
+                Rediger denne ønskeliste.
             </p>
-
-            <span class="text-small">Opdater ønske ↗</span>
-
+            <span class="text-small">Opdater ↗</span>
         </a>
 
-        <!-- SLET ØNSKELISTE -->
-        <a class="card card-action bg-red"
-           href="deleteWish.html">
+        <!-- DYNAMISK VISNING AF ØNSKER -->
+        <article class="card" th:each="wish : ${wishlist.wishes}">
+            <div class="card-body">
+                <h3 th:text="${wish.name}">Ønske navn</h3>
+                <p class="text-muted text-small" th:text="${wish.description}">Beskrivelse</p>
+                <p class="text-small" th:text="${wish.price} + ' kr.'">0 kr.</p>
 
-            <span class="icon-circle">-</span>
-
-            <h3>Slet ønske</h3>
-
-            <p class="text-muted text-small">
-                Fjern en ønske.
-            </p>
-
-            <span class="text-small">Slet ønske ↗</span>
-
-        </a>
+                <div class="card-footer row">
+                    <a class="text-small" th:href="${wish.link}" target="_blank" th:if="${wish.link}">Se produkt ↗</a>
+                    <button class="btn btn-icon" type="button">···</button>
+                </div>
+            </div>
+        </article>
 
     </div>
-        </main>
-        </div>
 
-    <!-- VIS OPRETTEDE ØNSKER -->
-
-
-    </article>
+</main>
 
 <!-- FOOTER -->
 <footer>
     <div class="container row">
 
         <div>
-            <a class="logo" href="index.html">CallDibs</a>
+            <a class="logo" href="/">CallDibs</a>
             <p class="text-muted text-small">Plads til dine ønsker.</p>
         </div>
 
@@ -127,8 +105,6 @@
 
     </div>
 </footer>
-</main>
 
 </body>
-
 </html>

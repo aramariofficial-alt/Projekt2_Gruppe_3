@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -64,6 +65,15 @@ public class WishlistController {
         wishlist.setId(id);
         //wishlistRepository.updateWishlist(wishlist);   Mangler updatewishlist 
         return "redirect:/";
+    }
+
+    @GetMapping("/wishlist/{id}")
+    public String viewWishlistDetail(@PathVariable int id, Model model) {
+        // Hent den specifikke ønskeliste baseret på id
+         Wishlist wishlist = wishlistRepository.getWishlistById(id);
+         model.addAttribute("wishlist", wishlist);
+
+        return "WishList"; // Den side der viser selve indholdet
     }
 
 }

@@ -7,7 +7,7 @@ public class Wishlist {
     int id;
     String name;
     String img;
-    List<Wish> wishes;
+    List<Wish> wishes = new ArrayList<>();
 
     public Wishlist(String name, String img) {
         this.wishes = new ArrayList<>();

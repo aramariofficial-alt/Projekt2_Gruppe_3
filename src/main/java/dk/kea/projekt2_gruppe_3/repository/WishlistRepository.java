@@ -1,5 +1,6 @@
 package dk.kea.projekt2_gruppe_3.repository;
 
+import dk.kea.projekt2_gruppe_3.model.Wish;
 import dk.kea.projekt2_gruppe_3.model.Wishlist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -75,25 +76,49 @@ public class WishlistRepository {
     }
 
     public Wishlist getWishlistById(int id) {
-        String sql = "SELECT * FROM wishList WHERE id = ?";
+        String sqlWishlist = "SELECT * FROM wishList WHERE id = ?";
+        String sqlWishes = "SELECT * FROM wish WHERE wishList_id = ?";
         Wishlist wishlist = null;
 
-        try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (Connection connection = dataSource.getConnection()) {
 
-            statement.setInt(1, id);
+            // 1. Hent selve ønskelisten
+            try (PreparedStatement statement = connection.prepareStatement(sqlWishlist)) {
+                statement.setInt(1, id);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        wishlist = new Wishlist();
+                        wishlist.setId(resultSet.getInt("id"));
+                        wishlist.setName(resultSet.getString("name"));
+                        wishlist.setImg(resultSet.getString("img"));
+                    }
+                }
+            }
 
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    wishlist = new Wishlist();
-                    wishlist.setId(resultSet.getInt("id"));
-                    wishlist.setName(resultSet.getString("name"));
-                    wishlist.setImg(resultSet.getString("img"));
+            // 2. Hvis ønskelisten findes, hent dens ønsker og tilføj dem
+            if (wishlist != null) {
+                try (PreparedStatement statement = connection.prepareStatement(sqlWishes)) {
+                    statement.setInt(1, id);
+                    try (ResultSet resultSet = statement.executeQuery()) {
+                        while (resultSet.next()) {
+                            Wish wish = new Wish();
+                            wish.setId(resultSet.getInt("id"));
+                            wish.setName(resultSet.getString("name"));
+                            wish.setDescription(resultSet.getString("description"));
+                            wish.setPrice(resultSet.getDouble("price"));
+                            wish.setLink(resultSet.getString("link"));
+                            wish.setCategory(resultSet.getString("category"));
+                            wish.setImg(resultSet.getString("img"));
+                            wish.setWishListId(resultSet.getInt("wishList_id"));
+
+                            wishlist.addWish(wish); // Tilføjer ønsket til listen
+                        }
+                    }
                 }
             }
 
         } catch (SQLException e) {
-            System.out.println("Error");
+            System.out.println("Error fetching wishlist with wishes");
             e.printStackTrace();
         }
 
