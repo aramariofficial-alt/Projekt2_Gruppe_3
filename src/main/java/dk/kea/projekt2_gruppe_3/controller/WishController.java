@@ -20,8 +20,8 @@ public class WishController {
     WishService wishService;
 
     @GetMapping("/getCreateWish")
-    public String createWish(@RequestParam("wishListId") int wishListId, Model model) {
-        model.addAttribute("wishListId", wishListId);
+    public String createWish(@RequestParam("wishlistId") int wishlistId, Model model) {
+        model.addAttribute("wishlistId", wishlistId);
         return "createWish";
     }
     @GetMapping("/getUpdateWish")
@@ -37,17 +37,17 @@ public class WishController {
                                  @RequestParam("price") double price,
                                  @RequestParam("link") String link,
                                  @RequestParam("category") String category,
-                                 @RequestParam("wishListId")int wishListId) {
+                                 @RequestParam("wishlistId")int wishlistId) {
         String img = wishService.getImg(category);
 
-        Wish wish = new Wish(name, description, price, link, category, img, wishListId);
+        Wish wish = new Wish(name, description, price, link, category, img, wishlistId);
         wishRepository.createWish(wish);
-        return "redirect:/getWishlist?id=" + wishListId;
+        return "redirect:/getWishlist?id=" + wishlistId;
     }
     @PostMapping("/deleteWish")
-    public String deleteWish(@RequestParam("id") int id, @RequestParam("wishListId") int wishListId) {
+    public String deleteWish(@RequestParam("id") int id, @RequestParam("wishlistId") int wishlistId) {
         wishRepository.deleteWish(id);
-        return "redirect:/getWishlist?id=" + wishListId;
+        return "redirect:/getWishlist?id=" + wishlistId;
     }
 
     @PostMapping("/saveUpdateCar")
@@ -57,12 +57,12 @@ public class WishController {
                                 @RequestParam("price")double price,
                                 @RequestParam("link")String link,
                                 @RequestParam("category")String category,
-                                @RequestParam("wishListId")int wishListId){
+                                @RequestParam("wishlistId")int wishlistId){
 
         String img = wishService.getImg(category);
-        Wish wish = new Wish(name, description, price, link, category, img, wishListId);
+        Wish wish = new Wish(name, description, price, link, category, img, wishlistId);
         wish.setId(id);
         wishRepository.updateWish(wish);
-        return "redirect:/getWishlist?id=" + wishListId;
+        return "redirect:/getWishlist?id=" + wishlistId;
     }
 }
