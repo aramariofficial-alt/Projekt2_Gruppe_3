@@ -56,8 +56,8 @@ INSERT INTO wish (
           'Sonys nyeste spillekonsol',
           4999.00,
           'https://www.pricerunner.dk',
-          'Gaming',
-          'gaming.jpg',
+          'Electronics',
+          'electronics.png',
           1
       ),
       (
@@ -66,7 +66,7 @@ INSERT INTO wish (
           1899.00,
           'https://www.apple.com',
           'Electronics',
-          'electronics.jpg',
+          'electronics.png',
           1
       ),
       (
@@ -75,7 +75,7 @@ INSERT INTO wish (
           799.00,
           'https://www.lego.com',
           'Toys',
-          'toys.jpg',
+          'toys.png',
           1
       ),
       (
@@ -84,7 +84,7 @@ INSERT INTO wish (
           1199.00,
           'https://www.nike.com',
           'Clothing',
-          'clothing.jpg',
+          'clothing.png',
           2
       ),
       (
@@ -93,7 +93,7 @@ INSERT INTO wish (
           299.00,
           'https://www.saxo.com',
           'Books',
-          'books.jpg',
+          'books.png',
           2
       ),
       (
@@ -102,7 +102,7 @@ INSERT INTO wish (
           2499.00,
           'https://www.elgiganten.dk',
           'Kitchen',
-          'kitchen.jpg',
+          'kitchen.png',
           2
       );
 
