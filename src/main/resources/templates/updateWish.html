@@ -1,10 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Wish</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{styles.css}">
 </head>
+
 <body>
+
+<header>
+    <div class="container">
+
+        <nav class="row">
+            <a href="index.html" th:href="@{/}" class="logo">
+                <img src="../static/img/logo.png"
+                     th:src="@{/img/logo.png}"
+                     class="logo-img"
+                     alt="CallDibs logo">
+            </a>
+
+            <a class="logo">CallDibs</a>
+            <span>Mine ønskelister</span>
+
+        </nav>
+
+        <div class="section">
+
+            <p>
+                Ret oplysningerne om dit ønske<br>
+                og hold ønskelisten opdateret.
+            </p>
+
+        </div>
+
+    </div>
+</header>
+
+<div class="create-box">
+
+    <div class="create-box-form">
+
+        <h2>Update Wish</h2>
+
+        <form th:action="@{/updateWish}" method="post">
+
+            <div>
+                <label for="name">Name:</label>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       placeholder="Enter name of wish"
+                       required>
+            </div>
+
+            <div>
+                <label for="description">Description:</label>
+                <input type="text"
+                       id="description"
+                       name="description"
+                       placeholder="Enter Description of wish"
+                       required>
+            </div>
+
+            <div>
+                <label for="price">Price:</label>
+                <input type="number"
+                       id="price"
+                       name="price"
+                       placeholder="Enter Price in Dkk"
+                       required>
+            </div>
+
+            <div>
+                <label for="link">Link:</label>
+                <input type="text"
+                       id="link"
+                       name="link"
+                       placeholder="Copy and paste link to your wish"
+                       required>
+            </div>
+
+            <div>
+                <label for="category">Category:</label>
+
+                <select id="category" name="category" required>
+                    <option value="">-- Select category --</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Kitchen">Kitchen</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Books">Books</option>
+                    <option value="Toys">Toys</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-light" type="submit">
+                    Opdater
+                </button>
+
+                <button class="btn btn-light" type="reset">
+                    Cancel
+                </button>
+
+                <button class="btn btn-delete" type="button">
+                    Delete
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
 
 </body>
 </html>
