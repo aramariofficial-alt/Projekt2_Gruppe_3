@@ -59,12 +59,12 @@ public class WishRepository {
     }
 
 
-    public void deleteWish(Wish wish) {
+    public void deleteWish(int id) {
         String sql = "DELETE FROM wish WHERE id = ?";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
-            statement.setInt(1, wish.getId());
+            statement.setInt(1,  id);
             statement.executeUpdate();
 
         } catch (SQLException e) {
