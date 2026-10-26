@@ -16,7 +16,7 @@
         <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
       </a>
       <a class="logo">CallDibs </a>
-      <span>Mine ønskelister</span>
+      <span> </span>
 
     </nav>
 
@@ -42,41 +42,78 @@
 </header>
 <div class="create-box">
   <div class="create-box-form">
-    <h2 >Create a new wish</h2>
+    <h2>Opret et nyt ønske</h2>
+
     <form th:action="@{/saveCreateWish}" method="post">
-      <input type="hidden" name="wishlistId" th:value="${wishlistId}">
+      <input
+              type="hidden"
+              name="wishlistId"
+              th:value="${wishlistId}"
+      >
+
       <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter name of wish" required>
+        <label for="name">Navn:</label>
+        <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Skriv ønskets navn"
+                required
+        >
       </div>
+
       <div>
-      <label for="description">Description:</label>
-      <input type="text" id="description" name="description" placeholder="Enter Description of wish" required>
+        <label for="description">Beskrivelse:</label>
+        <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Beskriv dit ønske"
+                required
+        >
       </div>
+
       <div>
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" placeholder="Enter Price in Dkk" required>
+        <label for="price">Pris:</label>
+        <input
+                type="number"
+                id="price"
+                name="price"
+                step="0.01"
+                placeholder="Angiv prisen i kroner"
+                required
+        >
       </div>
+
       <div>
         <label for="link">Link:</label>
-        <input type="text" id="link" name="link" placeholder="Copy and paste link to your wish" required>
+        <input
+                type="text"
+                id="link"
+                name="link"
+                placeholder="Indsæt et link til dit ønske"
+                required
+        >
       </div>
+
       <div>
-        <label for="category">Category:</label>
+        <label for="category">Kategori:</label>
         <select id="category" name="category" required>
-          <option value="">-- Select category --</option>
-          <option value="Electronics">Electronics</option>
-          <option value="Kitchen">Kitchen</option>
-          <option value="Clothing">Clothing</option>
-          <option value="Sports">Sports</option>
-          <option value="Books">Books</option>
-          <option value="Toys">Toys</option>
-          <option value="Other">Other</option>
+          <option value="">-- Vælg kategori --</option>
+          <option value="Electronics">Elektronik</option>
+          <option value="Gaming">Gaming</option>
+          <option value="Kitchen">Køkken</option>
+          <option value="Clothing">Tøj</option>
+          <option value="Sports">Sport</option>
+          <option value="Books">Bøger</option>
+          <option value="Toys">Legetøj</option>
+          <option value="Other">Andet</option>
         </select>
       </div>
 
-      <button class="btn-light, btn" type="submit">Create Wish</button>
-
+      <button class="btn" type="submit">
+        Opret ønske
+      </button>
     </form>
   </div>
 </div>

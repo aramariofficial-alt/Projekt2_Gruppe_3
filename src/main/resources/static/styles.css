@@ -78,7 +78,9 @@ img {
 header {
     color: white;
     background: linear-gradient(115deg, #f4524d, #ed6345, #bb2557);
-}
+
+    }
+
 nav {
     padding: 24px 0;
     border-bottom: 1px solid #ffffff40;
