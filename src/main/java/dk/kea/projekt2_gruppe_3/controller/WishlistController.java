@@ -76,4 +76,9 @@ public class WishlistController {
         return "wishlist"; // Den side der viser selve indholdet
     }
 
+    @GetMapping("/aboutus")
+    public String aboutUs() {
+        return "AboutUs";
+    }
+
 }

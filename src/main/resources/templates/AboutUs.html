@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Om os – CallDibs</title>
+
+    <link rel="stylesheet" href="/styles.css" th:href="@{/styles.css}">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <nav class="row">
+            <a th:href="@{/}" class="logo">
+                <img
+                        th:src="@{/img/logo.png}"
+                        class="logo-img"
+                        alt="CallDibs logo"
+                >
+            </a>
+
+            <a class="logo" th:href="@{/}">CallDibs</a>
+
+            <a th:href="@{/aboutus}">Om os</a>
+        </nav>
+    </div>
+</header>
+
+<!-- INTRODUKTION -->
+<div class="container section">
+    <p class="label">Små ønsker. Store smil.</p>
+
+    <h1>Gode gaver starter med gode ønsker.</h1>
+
+
+</div>
+
+<!-- HOVEDINDHOLD -->
+<main class="container stack">
+
+    <!-- OM OS -->
+    <section class="notice">
+        <div class="card-body">
+            <p class="label">Hvem står bag?</p>
+            <h2>Vi er holdet bag CallDibs</h2>
+
+            <p>
+                Vi er en gruppe datamatikerstuderende,
+                der udvikler CallDibs som en del af vores studie.
+                Vores idé er enkel: Det skal være nemt at holde
+                styr på de ting, man ønsker sig.
+            </p>
+
+            <p>
+                Vi kender det godt. Man finder den perfekte gaveidé,
+                men når nogen spørger, hvad man ønsker sig,
+                har man glemt den igen. Derfor har vi skabt et sted,
+                hvor dine ønsker kan samles og findes frem igen.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- FUNKTIONER -->
+    <section>
+        <p class="label">Fra idé til ønskeliste</p>
+        <h2>Sådan bruger du CallDibs</h2>
+
+        <div class="grid-3">
+
+            <article class="notice">
+                <div class="card-body">
+                    <h3>1. Opret en ønskeliste</h3>
+
+                    <p class="text-muted">
+                        Giv din liste et navn, der passer til anledningen.
+                        Det kan være fødselsdag, jul eller dine næste
+                        store drømme.
+                    </p>
+                </div>
+            </article>
+
+            <article class="notice">
+                <div class="card-body">
+                    <h3>2. Tilføj dine ønsker</h3>
+
+                    <p class="text-muted">
+                        Skriv navn, beskrivelse og pris.
+                        Tilføj et produktlink, så det er nemt
+                        at finde den rigtige vare.
+                    </p>
+                </div>
+            </article>
+
+            <article class="notice">
+                <div class="card-body">
+                    <h3>3. Hold listen opdateret</h3>
+
+                    <p class="text-muted">
+                        Dine ønsker kan ændre sig.
+                        Brug blyanten på ønskets kort til at
+                        rette oplysningerne.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section class="notice" id="support">
+        <div class="card-body">
+            <p class="label">Brug for en hånd?</p>
+            <h2>Hjælp og support</h2>
+
+            <p>
+                Her finder du svar på nogle af de spørgsmål,
+                du kan støde på, når du bruger CallDibs.
+            </p>
+
+            <details>
+                <summary>Hvordan opretter jeg en ønskeliste?</summary>
+                <p class="text-muted">
+                    Gå til forsiden, og tryk på
+                    “Opret ønskeliste”. Skriv listens navn,
+                    og bekræft oprettelsen.
+                </p>
+            </details>
+
+            <details>
+                <summary>Hvordan tilføjer jeg et ønske?</summary>
+                <p class="text-muted">
+                    Åbn den ønskeliste, ønsket skal ligge på,
+                    og tryk på “Opret ønske”.
+                    Udfyld formularen, og gem dit ønske.
+                </p>
+            </details>
+
+            <details>
+                <summary>Hvordan redigerer jeg et ønske?</summary>
+                <p class="text-muted">
+                    Tryk på blyanten på ønskets kort.
+                    Ret oplysningerne, og tryk på “Opdater”
+                    for at gemme ændringerne.
+                </p>
+            </details>
+
+            <details>
+                <summary>Hvad gør jeg, hvis et produktlink ikke virker?</summary>
+                <p class="text-muted">
+                    Rediger ønsket, og kontrollér linket.
+                    Kopiér hele adressen fra produktets hjemmeside,
+                    inklusive https://.
+                </p>
+            </details>
+
+            <details>
+                <summary>Mit nye ønske bliver ikke vist. Hvad gør jeg?</summary>
+                <p class="text-muted">
+                    Kontrollér, at du har åbnet den rigtige ønskeliste.
+                    Genindlæs siden. Hvis ønsket stadig mangler,
+                    så notér, hvad du gjorde, og om der kom en fejlbesked.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- AFSLUTNING -->
+    <aside class="notice">
+        <p>
+            <strong>Tak, fordi du bruger CallDibs.</strong>
+            Vi håber, at vi kan gøre det lidt nemmere at ønske sig
+            noget – og lidt lettere at finde den rette gave.
+        </p>
+    </aside>
+
+    <div>
+        <a class="btn" th:href="@{/}">
+            Tilbage til mine ønskelister
+        </a>
+    </div>
+
+    <section class="notice">
+        <div class="card-body stack">
+            <div>
+                <p class="label">Menneskene bag CallDibs</p>
+                <h2>Et lille team med store idéer</h2>
+            </div>
+
+            <img
+                    th:src="@{/img/CallDips-teamet på kontoret.png}"
+                    alt="CallDibs-teamet på kontoret"
+            >
+
+            <p class="text-muted text-small">
+                Sammen gør vi det nemmere at samle ønsker og dele glæden.
+            </p>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container row">
+        <div>
+            <a class="logo" th:href="@{/}">CallDibs</a>
+            <p class="text-muted text-small">Plads til dine ønsker.</p>
+        </div>
+
+        <a href="#support" class="text-small">Hjælp og support</a>
+
+        <span class="text-muted text-small">© 2026 CallDibs</span>
+    </div>
+</footer>
+
+</body>
+</html>
