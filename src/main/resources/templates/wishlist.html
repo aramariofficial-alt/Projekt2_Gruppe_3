@@ -67,7 +67,7 @@
 
             <div class="card-body">
                 <a class="text-small" th:href="${wish.link}" target="_blank" th:if="${wish.link}">
-                <img th:src="@{/img/{img}(img=${wish.img})}" th:alt="${wish.category} + ' billede'">
+                <img class="card-image bg-peach" th:src="@{/img/{img}(img=${wish.img})}" th:alt="${wish.category} + ' billede'">
                 <h3 th:text="${wish.name}">Ønske navn</h3>
                 <p class="text-muted text-small" th:text="${wish.description}">Beskrivelse</p>
                 <p class="text-small" th:text="${wish.price} + ' kr.'"> kr.</p>
