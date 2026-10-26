@@ -45,6 +45,9 @@
 
         <form th:action="@{/saveUpdateWish}" method="post">
 
+            <input type="hidden" name="id" th:value="${wish.id}">
+            <input type="hidden" name="wishlistId" th:value="${wish.wishlistId}">
+
             <div>
                 <label for="name">Name:</label>
                 <input type="text"
@@ -105,8 +108,19 @@
                 <button class="btn btn-light" type="reset">
                     Cancel
                 </button>
+            </div>
 
-                <button class="btn btn-delete" type="button">
+        </form>
+
+        <form th:action="@{/deleteWish}" method="post">
+
+            <input type="hidden" name="id" th:value="${wish.id}">
+            <input type="hidden" name="wishlistId" th:value="${wish.wishlistId}">
+
+            <div class="button-group">
+                <button class="btn btn-delete"
+                        type="submit"
+                        onclick="return confirm('Er du sikker på, at du vil slette dette ønske?')">
                     Delete
                 </button>
             </div>
@@ -118,6 +132,7 @@
 </div>
 
 </body>
+
 <footer>
     <div class="container row">
 
@@ -132,4 +147,5 @@
 
     </div>
 </footer>
+
 </html>
