@@ -93,6 +93,7 @@ public class WishRepository {
                     wish.setLink(resultSet.getString("link"));
                     wish.setCategory(resultSet.getString("category"));
                     wish.setImg(resultSet.getString("img"));
+                    wish.setWishlistId(resultSet.getInt("wishlist_id"));
                 }
             }
         } catch (SQLException e) {
