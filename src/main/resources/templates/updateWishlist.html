@@ -1,102 +1,101 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Update Wish</title>
-  <link rel="stylesheet" href="../static/styles.css" th:href="@{styles.css}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Wish</title>
+    <link rel="stylesheet" href="../static/styles.css" th:href="@{styles.css}">
 </head>
 
 <body>
 
 <header>
-  <div class="container">
+    <div class="container">
 
-    <nav class="row">
-      <a href="index.html" th:href="@{/}" class="logo">
-        <img src="../static/img/logo.png"
-             th:src="@{/img/logo.png}"
-             class="logo-img"
-             alt="CallDibs logo">
-      </a>
+        <nav class="row">
+            <a href="index.html" th:href="@{/}" class="logo">
+                <img src="../static/img/logo.png"
+                     th:src="@{/img/logo.png}"
+                     class="logo-img"
+                     alt="CallDibs logo">
+            </a>
 
-      <a class="logo">CallDibs</a>
-      <span> </span>
+            <a class="logo">CallDibs</a>
+            <span> </span>
 
-    </nav>
+        </nav>
 
-    <div class="section">
+        <div class="section">
 
-      <p>
-        Ret oplysningerne om din ønskeliste<br>
-        og hold ønskelisten opdateret.
-      </p>
+            <p>
+                Ret oplysningerne om din ønskeliste<br>
+                og hold ønskelisten opdateret.
+            </p>
+
+        </div>
 
     </div>
-
-  </div>
 </header>
 
 <div class="create-box">
 
-  <div class="create-box-form">
+    <div class="create-box-form">
 
-    <h2>Opdatere din ønskeliste</h2>
+        <h2>Opdatere din ønskeliste</h2>
 
-    <form th:action="@{/saveUpdateWishlist}" method="post">
+        <form th:action="@{/saveUpdateWishlist}" method="post">
 
-      <input type="hidden" name="id" th:value="${wishlist.id}">
+            <input type="hidden" name="id" th:value="${wishlist.id}">
 
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"
-               th:value="${wishlist.name}"
-        placeholder="Enter name of wishlist" required>
-      </div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"
+                       th:value="${wishlist.name}"
+                       placeholder="Enter name of wishlist" required>
+            </div>
 
-      <div class="button-group">
-        <button class="btn btn-light" type="submit">
-          Opdater
-        </button>
+            <div class="button-group">
+                <button class="btn btn-light" type="submit">
+                    Opdater
+                </button>
 
-        <button class="btn btn-light" type="reset">
-          Cancel
-        </button>
-      </div>
+                <a class="btn btn-light" th:href="@{/}">Cancel</a>
 
-    </form>
+            </div>
 
-    <form th:action="@{/deleteWishlist}" method="post">
-        <input type="hidden" name="id" th:value="${wishlist.id}">
-      <div class="button-group">
-        <button class="btn btn-delete"
-                type="submit"
-                onclick="return confirm('Er du sikker på, at du vil slette denne ønskelist?')">
-          Delete
-        </button>
-      </div>
+        </form>
 
-    </form>
+        <form th:action="@{/deleteWishlist}" method="post">
+            <input type="hidden" name="id" th:value="${wishlist.id}">
+            <div class="button-group">
+                <button class="btn btn-delete"
+                        type="submit"
+                        onclick="return confirm('Er du sikker på, at du vil slette denne ønskelist?')">
+                    Delete
+                </button>
+            </div>
 
-  </div>
+        </form>
+
+    </div>
 
 </div>
 
 </body>
 
 <footer>
-  <div class="container row">
+    <div class="container row">
 
-    <div>
-      <a class="logo" href="index.html">CallDibs</a>
-      <p class="text-muted text-small">Plads til dine ønsker.</p>
+        <div>
+            <a class="logo" href="index.html">CallDibs</a>
+            <p class="text-muted text-small">Plads til dine ønsker.</p>
+        </div>
+
+        <p class="text-muted text-small">Saml. Ønsk. Del glæden.</p>
+
+        <span class="text-muted text-small">© 2026 CallDibs</span>
+
     </div>
-
-    <p class="text-muted text-small">Saml. Ønsk. Del glæden.</p>
-
-    <span class="text-muted text-small">© 2026 CallDibs</span>
-
-  </div>
 </footer>
 
 </html>
