@@ -63,7 +63,7 @@ public class WishlistController {
         String img = "/static/img/wishlist.png";
         Wishlist wishlist = new Wishlist(name, img);
         wishlist.setId(id);
-        //wishlistRepository.updateWishlist(wishlist);   Mangler updateWishlist 
+        wishlistRepository.updateWishlist(wishlist);
         return "redirect:/";
     }
 

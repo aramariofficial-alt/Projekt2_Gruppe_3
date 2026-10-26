@@ -32,6 +32,7 @@ CREATE TABLE wish (
 
                       FOREIGN KEY (wishlist_id)
                           REFERENCES wishlist(id)
+                            ON DELETE CASCADE
 );
 
 

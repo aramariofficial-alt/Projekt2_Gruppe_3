@@ -74,6 +74,22 @@ public class WishlistRepository {
         return wishlists;
 
     }
+    public void updateWishlist(Wishlist wishlist) {
+        String sql = "UPDATE wishlist SET name = ?, img = ? WHERE id = ?";
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setString(1, wishlist.getName());
+            statement.setString(2, wishlist.getImg());
+            statement.setInt(3, wishlist.getId());
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println("Error updating wishlist");
+            e.printStackTrace();
+        }
+    }
 
     public Wishlist getWishlistById(int id) {
         String sqlWishlist = "SELECT * FROM wishlist WHERE id = ?";

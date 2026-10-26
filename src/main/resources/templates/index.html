@@ -7,7 +7,8 @@
 
     <title>CallDibs</title>
 
-    <link rel="stylesheet" href="/styles.css" th:href="@{/styles.css}"></head>
+    <link rel="stylesheet" href="/styles.css" th:href="@{/styles.css}">
+</head>
 
 <body>
 
@@ -15,7 +16,7 @@
 <header>
     <div class="container">
 
-        <nav class="row" >
+        <nav class="row">
             <a href="index.html" th:href="@{/}" class="logo">
                 <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
             </a>
@@ -76,21 +77,23 @@
         </a>
 
 
-
         <!-- OPRETTEDE ØNSKER -->
         <article class="card" th:each="wishlist : ${wishlists}">
             <a class="text-small" th:href="@{'/wishlist/' + ${wishlist.id}}">
-            <img class="card-image bg-peach" src="/img/wishlist.png" th:src="@{/img/wishlist.png}" alt="Ønskeliste">
+                <img class="card-image bg-peach" src="/img/wishlist.png" th:src="@{/img/wishlist.png}" alt="Ønskeliste">
+            </a>
 
-
-            <div class="card-body" >
+            <div class="card-body">
                 <h3 th:text="${wishlist.name}"></h3>
                 <div class="card-footer row">
-
-                    <button class="btn btn-icon" type="button">···</button>
+                    <a class="btn btn-icon"
+                       th:href="@{/getUpdateWishlist(id=${wishlist.id})}"
+                       aria-label="Rediger ønskeliste"
+                       title="Rediger ønskeliste">
+                        ✎
+                    </a>
                 </div>
             </div>
-            </a>
         </article>
     </div>
 </main>
