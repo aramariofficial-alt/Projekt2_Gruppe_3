@@ -53,6 +53,7 @@
                 <input type="text"
                        id="name"
                        name="name"
+                       th:value="${wish.getName()}"
                        placeholder="Enter name of wish"
                        required>
             </div>
@@ -62,6 +63,7 @@
                 <input type="text"
                        id="description"
                        name="description"
+                       th:value="${wish.getDescription()}"
                        placeholder="Enter Description of wish"
                        required>
             </div>
@@ -71,6 +73,7 @@
                 <input type="number"
                        id="price"
                        name="price"
+                       th:value="${wish.getPrice()}"
                        placeholder="Enter Price in Dkk"
                        required>
             </div>
@@ -80,6 +83,7 @@
                 <input type="text"
                        id="link"
                        name="link"
+                       th:value="${wish.getLink()}"
                        placeholder="Copy and paste link to your wish"
                        required>
             </div>
@@ -89,14 +93,41 @@
 
                 <select id="category" name="category" required>
                     <option value="">-- Select category --</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Gaming">Gaming</option>
-                    <option value="Kitchen">Kitchen</option>
-                    <option value="Clothing">Clothing</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Books">Books</option>
-                    <option value="Toys">Toys</option>
-                    <option value="Other">Other</option>
+
+                    <option value="Electronics"
+                            th:selected="${wish.category == 'Electronics'}">
+                        Electronics
+                    </option>
+
+                    <option value="Kitchen"
+                            th:selected="${wish.category == 'Kitchen'}">
+                        Kitchen
+                    </option>
+
+                    <option value="Clothing"
+                            th:selected="${wish.category == 'Clothing'}">
+                        Clothing
+                    </option>
+
+                    <option value="Sports"
+                            th:selected="${wish.category == 'Sports'}">
+                        Sports
+                    </option>
+
+                    <option value="Books"
+                            th:selected="${wish.category == 'Books'}">
+                        Books
+                    </option>
+
+                    <option value="Toys"
+                            th:selected="${wish.category == 'Toys'}">
+                        Toys
+                    </option>
+
+                    <option value="Other"
+                            th:selected="${wish.category == 'Other'}">
+                        Other
+                    </option>
                 </select>
             </div>
 
@@ -105,7 +136,9 @@
                     Opdater
                 </button>
 
-                <button class="btn btn-light" type="reset">
+                <button class="btn btn-light"
+                        type="button"
+                        onclick="history.back()">
                     Cancel
                 </button>
             </div>
