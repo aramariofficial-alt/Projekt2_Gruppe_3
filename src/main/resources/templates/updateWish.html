@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Wish</title>
+    <title>Opdater ønske</title>
     <link rel="stylesheet" href="../static/styles.css" th:href="@{styles.css}">
 </head>
 
@@ -41,7 +41,7 @@
 
     <div class="create-box-form">
 
-        <h2>Update Wish</h2>
+        <h2>Opdater ønske</h2>
 
         <form th:action="@{/saveUpdateWish}" method="post">
 
@@ -49,32 +49,32 @@
             <input type="hidden" name="wishlistId" th:value="${wish.wishlistId}">
 
             <div>
-                <label for="name">Name:</label>
+                <label for="name">Navn:</label>
                 <input type="text"
                        id="name"
                        name="name"
                        th:value="${wish.getName()}"
-                       placeholder="Enter name of wish"
+                       placeholder="Skriv ønskets navn"
                        required>
             </div>
 
             <div>
-                <label for="description">Description:</label>
+                <label for="description">Beskrivelse:</label>
                 <input type="text"
                        id="description"
                        name="description"
                        th:value="${wish.getDescription()}"
-                       placeholder="Enter Description of wish"
+                       placeholder="Beskriv dit ønske"
                        required>
             </div>
 
             <div>
-                <label for="price">Price:</label>
+                <label for="price">Pris:</label>
                 <input type="number"
                        id="price"
                        name="price"
                        th:value="${wish.getPrice()}"
-                       placeholder="Enter Price in Dkk"
+                       placeholder="Angiv prisen i kroner"
                        required>
             </div>
 
@@ -84,49 +84,49 @@
                        id="link"
                        name="link"
                        th:value="${wish.getLink()}"
-                       placeholder="Copy and paste link to your wish"
+                       placeholder="Indsæt et link til dit ønske"
                        required>
             </div>
 
             <div>
-                <label for="category">Category:</label>
+                <label for="category">Kategori:</label>
 
                 <select id="category" name="category" required>
-                    <option value="">-- Select category --</option>
+                    <option value="">-- Vælg kategori --</option>
 
                     <option value="Electronics"
                             th:selected="${wish.category == 'Electronics'}">
-                        Electronics
+                        Elektronik
                     </option>
 
                     <option value="Kitchen"
                             th:selected="${wish.category == 'Kitchen'}">
-                        Kitchen
+                        Køkken
                     </option>
 
                     <option value="Clothing"
                             th:selected="${wish.category == 'Clothing'}">
-                        Clothing
+                        Tøj
                     </option>
 
                     <option value="Sports"
                             th:selected="${wish.category == 'Sports'}">
-                        Sports
+                        Sport
                     </option>
 
                     <option value="Books"
                             th:selected="${wish.category == 'Books'}">
-                        Books
+                        Bøger
                     </option>
 
                     <option value="Toys"
                             th:selected="${wish.category == 'Toys'}">
-                        Toys
+                        Legetøj
                     </option>
 
                     <option value="Other"
                             th:selected="${wish.category == 'Other'}">
-                        Other
+                        Andet
                     </option>
                 </select>
             </div>
@@ -139,7 +139,7 @@
                 <button class="btn btn-light"
                         type="button"
                         onclick="history.back()">
-                    Cancel
+                    Annuller
                 </button>
             </div>
 
@@ -154,7 +154,7 @@
                 <button class="btn btn-delete"
                         type="submit"
                         onclick="return confirm('Er du sikker på, at du vil slette dette ønske?')">
-                    Delete
+                    Slet
                 </button>
             </div>
 

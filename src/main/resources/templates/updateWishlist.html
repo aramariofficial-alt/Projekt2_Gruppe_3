@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Wish</title>
+    <title>Opdater ønskeliste</title>
     <link rel="stylesheet" href="../static/styles.css" th:href="@{styles.css}">
 </head>
 
@@ -48,10 +48,10 @@
             <input type="hidden" name="id" th:value="${wishlist.id}">
 
             <div>
-                <label for="name">Name:</label>
+                <label for="name">Navn:</label>
                 <input type="text" id="name" name="name"
                        th:value="${wishlist.name}"
-                       placeholder="Enter name of wishlist" required>
+                       placeholder="Skriv ønskelistens navn" required>
             </div>
 
             <div class="button-group">
@@ -59,7 +59,7 @@
                     Opdater
                 </button>
 
-                <a class="btn btn-light" th:href="@{/}">Cancel</a>
+                <a class="btn btn-light" th:href="@{/}">Annuller</a>
 
             </div>
 
@@ -71,7 +71,7 @@
                 <button class="btn btn-delete"
                         type="submit"
                         onclick="return confirm('Er du sikker på, at du vil slette denne ønskelist?')">
-                    Delete
+                    Slet
                 </button>
             </div>
 
