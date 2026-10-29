@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+l
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <title>CallDibs</title>
 
-    <link rel="stylesheet" href="/styles.css" th:href="@{/styles.css}">
+    <link href="/styles.css" rel="stylesheet" th:href="@{/styles.css}">
 </head>
 
 <body>
@@ -17,10 +18,10 @@
     <div class="container">
 
         <nav class="row">
-            <a href="index.html" th:href="@{/}" class="logo">
-                <img src="../static/img/logo.png" th:src="@{/img/logo.png}" class="logo-img" alt="CallDibs logo">
+            <a class="logo" href="index.html" th:href="@{/}">
+                <img class="logo-img" alt="CallDibs logo" th:src="@{/img/logo.png}">
             </a>
-            <a class="logo">CallDibs </a>
+            <span class="logo">CallDibs </span>
             <a th:href="@{/aboutus}">Om os</a>
         </nav>
 
@@ -61,11 +62,7 @@
 
     <div class="grid-3">
         <!-- OPRET ØNSKELISTE -->
-        <a
-                class="card card-action bg-green"
-                th:href="@{/getCreateWishlist}"
-                id="ny-liste"
-        >
+        <a id="ny-liste" class="card card-action bg-green" th:href="@{/getCreateWishlist}">
             <span class="icon-circle"> + </span>
 
             <h3>Hvad ønsker du dig?</h3>
@@ -80,15 +77,15 @@
         <!-- OPRETTEDE ØNSKER -->
         <article class="card" th:each="wishlist : ${wishlists}">
             <a class="text-small" th:href="@{'/wishlist/' + ${wishlist.id}}">
-                <img class="card-image bg-peach" src="/img/wishlist.png" th:src="@{/img/wishlist.png}" alt="Ønskeliste">
+                <img class="card-image bg-peach" src="/img/wishlist.png" alt="Ønskeliste" th:src="@{/img/wishlist.png}">
             </a>
 
             <div class="card-body">
                 <h3 th:text="${wishlist.name}"></h3>
                 <div class="card-footer row">
                     <a class="btn btn-icon"
-                       th:href="@{/getUpdateWishlist(id=${wishlist.id})}"
                        aria-label="Rediger ønskeliste"
+                       th:href="@{/getUpdateWishlist(id=${wishlist.id})}"
                        title="Rediger ønskeliste">
                         ✎
                     </a>
