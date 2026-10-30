@@ -18,14 +18,13 @@ CREATE TABLE wishlist (
                           img VARCHAR(255)
 );
 
-
 -- Tabel til ønsker
 CREATE TABLE wish (
                       id INT AUTO_INCREMENT PRIMARY KEY,
                       name VARCHAR(100) NOT NULL,
                       description VARCHAR(100) NOT NULL,
                       price DOUBLE NOT NULL,
-                      link VARCHAR(300) NOT NULL,
+                      link VARCHAR(500) NOT NULL,
                       category VARCHAR(50) NOT NULL,
                       img VARCHAR(255),
                       wishlist_id INT NOT NULL,
