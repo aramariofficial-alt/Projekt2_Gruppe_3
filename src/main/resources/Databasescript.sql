@@ -25,7 +25,7 @@ CREATE TABLE wish (
                       name VARCHAR(100) NOT NULL,
                       description VARCHAR(100) NOT NULL,
                       price DOUBLE NOT NULL,
-                      link VARCHAR(100) NOT NULL,
+                      link VARCHAR(300) NOT NULL,
                       category VARCHAR(50) NOT NULL,
                       img VARCHAR(255),
                       wishlist_id INT NOT NULL,
